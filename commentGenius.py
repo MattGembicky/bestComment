@@ -309,13 +309,13 @@ def build(word):
         for char in word:
             if char in letters:
                 res[line] += "  " + letters[char][line]
-        res[line] += "    //"
-    res.append("//" + "".join([" " for i in range(len(res[0]) - 4)]) + "//")
+        res[line] += "    //\n"
+    res.append("//" + "".join([" " for i in range(len(res[0]) - 5)]) + "//\n")
     res.append(res[-1])
     res.insert(0, res[-1])
-    res.append("/" * len(res[0]))
+    res.append("/" * (len(res[0]) - 1) + "\n")
     res.insert(0, res[-1])
-    return "\n".join(res)
+    return "".join(res)
 
 file = open("bestCommentInWorld.txt", "w")
 file.write(build(word))
