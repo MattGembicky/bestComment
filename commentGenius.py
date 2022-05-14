@@ -305,7 +305,7 @@ def build(word):
     word = word.upper()
     res = []
     for line in range(8):
-        res.append("//    ")
+        res.append("//  ")
         for char in word:
             if char in letters:
                 res[line] += "  " + letters[char][line]
