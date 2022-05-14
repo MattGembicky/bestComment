@@ -299,6 +299,7 @@ letters = {
     }
 }
 
+tabs = int(input("Enter a number of tabs (2 spaces). Every line starts with that: \n"))
 word = input("Type a word to get something amazing: \n")
 
 def build(word):
@@ -315,6 +316,8 @@ def build(word):
     res.insert(0, res[-1])
     res.append("/" * (len(res[0]) - 1) + "\n")
     res.insert(0, res[-1])
+    for i in range(13):
+        res[i] = "".join(["  " for i in range(tabs)]) + res[i]
     return "".join(res)
 
 file = open("bestCommentInWorld.txt", "w")
